@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.microsoft.playwright:playwright:1.41.0'
+    implementation 'org.testng:testng:7.1.0'
+    testImplementation 'org.testng:testng:7.7.1'
+    implementation 'com.aventstack:extentreports:5.0.9'
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
+
+}
+
+test {
+    useTestNG()
+    sourceSets {
+        main {
+            java {
+                srcDirs = ['src/main/java']
+            }
+        }
+        test {
+            java {
+                srcDirs = ['src/test/java']
+            }
+        }
+    }
+}
+
